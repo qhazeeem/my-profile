@@ -1,303 +1,1181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kazeem Adamson Mutiu - Cybersecurity Professional</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-      line-height: 1.6;
-      color: #222;
-      background: #fff;
-    }
-    h1, h2, h3 {
-      color: #005a9c;
-      margin-top: 2rem;
-      margin-bottom: 0.5rem;
-    }
-    a {
-      color: #007acc;
-      text-decoration: none;
-    }
-    a:hover,
-    a:focus {
-      text-decoration: underline;
-      outline: none;
-    }
-    hr {
-      border: none;
-      border-top: 1px solid #ccc;
-      margin: 2rem 0;
-    }
-    .contact-info {
-      margin-top: 0.5rem;
-      font-size: 0.95rem;
-      color: #444;
-    }
-    ul {
-      margin-left: 1.2rem;
-    }
-    .project-link {
-      font-size: 0.95rem;
-      margin-bottom: 0.5rem;
-    }
-    .project-link a {
-      font-weight: 600;
-    }
-    /* New socials section styling */
-    #socials {
-      margin-top: 1rem;
-      font-size: 1rem;
-    }
-    #socials ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      gap: 1.5rem;
-    }
-    #socials li {
-      display: inline;
-    }
-    #socials a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-weight: 600;
-    }
-    #socials a svg {
-      width: 18px;
-      height: 18px;
-      fill: #007acc;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kazeem Adamson Mutiu - Cybersecurity Professional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2b77e6;
+            --accent-color: #e53e3e;
+            --bg-light: #f7fafc;
+            --bg-white: #ffffff;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --text-muted: #718096;
+            --border-light: #e2e8f0;
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--bg-white);
+            box-shadow: var(--shadow-xl);
+            border-radius: 24px;
+            overflow: hidden;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Professional Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #2c5282 100%);
+            padding: 60px 40px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3e%3cg fill='none' fill-rule='evenodd'%3e%3cg fill='%23ffffff' fill-opacity='0.02'%3e%3ccircle cx='30' cy='30' r='4'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e");
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .header-content {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 40px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-image-container {
+            position: relative;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 6px solid rgba(255, 255, 255, 0.2);
+            object-fit: cover;
+            box-shadow: var(--shadow-xl);
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .profile-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: var(--accent-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 18px;
+            border: 3px solid white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-text {
+            min-width: 0;
+        }
+
+        .name {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 30px;
+            color: #cbd5e0;
+            letter-spacing: 0.025em;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px 16px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .contact-icon {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 60px 40px;
+        }
+
+        .section {
+            margin-bottom: 60px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            position: relative;
+            letter-spacing: -0.02em;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .subsection-title {
+            font-size: 1.6rem;
+            color: var(--text-primary);
+            margin: 40px 0 25px 0;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .subsection-title::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .summary {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            background: var(--bg-light);
+            padding: 40px;
+            border-radius: 20px;
+            border-left: 6px solid var(--secondary-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .summary strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: var(--bg-white);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--secondary-color);
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .card-description {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .card-link {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .card-link:hover {
+            color: var(--accent-color);
+            gap: 10px;
+        }
+
+        .card-link::after {
+            content: '→';
+            transition: transform 0.3s ease;
+        }
+
+        .card-link:hover::after {
+            transform: translateX(2px);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .skill-category {
+            background: var(--bg-white);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--secondary-color);
+            border-radius: 16px 16px 0 0;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .skill-category h4 {
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 10px 0;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+
+        .skill-list li::before {
+            content: '✓';
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        /* Certifications */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .cert-item {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #4299e1 100%);
+            color: white;
+            padding: 25px 20px;
+            border-radius: 16px;
+            text-align: center;
+            font-weight: 500;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cert-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255, 255, 255, 0.1) 10px,
+                rgba(255, 255, 255, 0.1) 20px
+            );
+            transition: transform 0.3s ease;
+        }
+
+        .cert-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cert-item:hover::before {
+            transform: translate(20px, 20px);
+        }
+
+        .cert-item span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Media Items */
+        .media-item {
+            background: var(--bg-white);
+            border-radius: 16px;
+            padding: 35px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow-sm);
+            border-left: 6px solid var(--accent-color);
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+
+        .media-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .media-title {
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .media-description {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .quote {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #2c5282 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-style: italic;
+            line-height: 1.7;
+            margin-top: 60px;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .quote::before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            top: 10px;
+            left: 30px;
+            opacity: 0.3;
+            font-family: serif;
+        }
+
+        .quote::after {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            bottom: 10px;
+            right: 30px;
+            opacity: 0.3;
+            font-family: serif;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                margin: 10px;
+                border-radius: 20px;
+            }
+
+            .header {
+                padding: 40px 30px;
+            }
+
+            .main-content {
+                padding: 40px 30px;
+            }
+
+            .cards-grid {
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .profile-image {
+                width: 150px;
+                height: 150px;
+                margin: 0 auto;
+            }
+
+            .name {
+                font-size: 2.8rem;
+            }
+
+            .title {
+                font-size: 1.3rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .social-links {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .main-content {
+                padding: 30px 20px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cards-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .certifications-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .name {
+                font-size: 2.2rem;
+            }
+
+            .title {
+                font-size: 1.1rem;
+            }
+
+            .contact-item,
+            .social-link {
+                padding: 10px 14px;
+                font-size: 0.9rem;
+            }
+
+            .card,
+            .skill-category,
+            .media-item {
+                padding: 25px;
+            }
+
+            .quote {
+                padding: 30px 20px;
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+
+            .container {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+
+            .header {
+                background: #333 !important;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .card:hover,
+            .skill-category:hover,
+            .media-item:hover {
+                transform: none;
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus styles for keyboard navigation */
+        .social-link:focus,
+        .card-link:focus {
+            outline: 2px solid var(--secondary-color);
+            outline-offset: 2px;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Kazeem Adamson Mutiu</h1>
-    <div class="contact-info" role="contentinfo" aria-label="Contact Information">
-      📞 +44 07543 769416 | ✉️ <a href="mailto:kay_zie4u@yahoo.com">kay_zie4u@yahoo.com</a> | 📍 West Yorkshire, United Kingdom
+    <div class="container">
+        <!-- Professional Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="profile-image-container">
+                    <img src="kazeem.png" alt="Kazeem Adamson Mutiu - Cybersecurity Professional" class="profile-image">
+                    <div class="profile-badge">🛡️</div>
+                </div>
+                <div class="header-text">
+                    <h1 class="name">Kazeem Adamson Mutiu</h1>
+                    <p class="title">Cybersecurity Professional & AI Security Expert</p>
+                    
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <span>+44 07543 769416</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">✉️</span>
+                            <span>kay_zie4u@yahoo.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span>West Yorkshire, UK</span>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/mutiu-kazeem/" class="social-link" target="_blank" rel="noopener noreferrer">
+                            <span>🔗</span>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://www.credly.com/users/mutiu-kazeem/badges#credly" class="social-link" target="_blank" rel="noopener noreferrer">
+                            <span>🏆</span>
+                            <span>Credly</span>
+                        </a>
+                        <a href="https://github.com/qhazeeem" class="social-link" target="_blank" rel="noopener noreferrer">
+                            <span>💻</span>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Professional Summary -->
+            <section class="section">
+                <h2 class="section-title">Professional Summary</h2>
+                <div class="summary">
+                    Dynamic and certified Cybersecurity Professional with <strong>10+ years of hands-on experience</strong> across IT infrastructure support, network security, and incident response. Holder of a <strong>Master's in Cybersecurity (Distinction)</strong> and <strong>15+ global certifications</strong> including Fortinet Certified Network Security Professional, Certified Information System Auditor - CISA, ISO 27001 Lead Implementer, and Azure/AWS Cloud Practitioner certifications. <strong>Distinguished expert in AI Security, Machine Learning for Cybersecurity, and Zero Trust Network Architecture</strong> with proven capabilities in developing ML-driven security solutions and advanced network defense systems. Currently preparing for CISSP certification to deepen strategic security leadership capabilities. Passionate about continuous learning, public speaking on emerging security technologies, and strengthening organisational security posture through innovative AI-powered defense mechanisms.
+                </div>
+            </section>
+
+            <!-- Media Presence & Public Engagement -->
+            <section class="section">
+                <h2 class="section-title">Media Presence & Public Engagement</h2>
+                
+                <h3 class="subsection-title">Conference Speaking & Industry Presentations</h3>
+                <div class="media-item">
+                    <div class="media-title">🎙️ Speaker, apidays London 2025</div>
+                    <div class="media-description">
+                        <strong>Topic:</strong> "Securing APIs in a Zero Trust Network Environment"<br>
+                        Delivering insights on API security best practices within modern Zero Trust architectures.
+                    </div>
+                    <a href="https://www.apidays.global/events/2025/london#speakers" class="card-link" target="_blank" rel="noopener noreferrer">View Conference Details</a>
+                </div>
+
+                <div class="media-item">
+                    <div class="media-title">📺 Guest Expert, Channels TV</div>
+                    <div class="media-description">
+                        <strong>Featured Discussion:</strong> "Cybersecurity and AI's Impact on Nigeria's Digital Future"<br>
+                        Provided expert analysis on emerging AI security threats and digital transformation challenges affecting Nigeria's cybersecurity landscape.
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=RVbvJl89n5A" class="card-link" target="_blank" rel="noopener noreferrer">Watch the Interview</a>
+                </div>
+
+                <h3 class="subsection-title">Industry Publications & Research</h3>
+                <div class="media-item">
+                    <div class="media-title">📄 Zero Trust 2.0: Advances, Challenges, and Future Directions in ZTA</div>
+                    <div class="media-description">
+                        <strong>Comprehensive Research Paper</strong><br>
+                        A critical exploration of Zero Trust Architecture evolution and adoption across sectors (2020–2025), examining implementation challenges, emerging technologies, and future security paradigms.
+                    </div>
+                    <a href="https://www.researchsquare.com/article/rs-6602547/v1" class="card-link" target="_blank" rel="noopener noreferrer">Read the Research Paper</a>
+                </div>
+
+                <div class="media-item">
+                    <div class="media-title">📋 AI-Driven Cybersecurity: The Next Generation of Threat Detection</div>
+                    <div class="media-description">
+                        <strong>Technical White Paper (In Progress)</strong><br>
+                        Analysis of machine learning applications in cybersecurity, covering automated threat detection, behavioral analytics, and AI security governance frameworks.
+                    </div>
+                    
+                </div>
+            </section>
+
+            <!-- Selected Technical Projects -->
+            <section class="section">
+                <h2 class="section-title">Selected Technical Projects</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-title">🤖 Phishing Detection System using Machine Learning</div>
+                        <div class="card-description">
+                            <strong> Advanced homelab project </strong>  featuring custom ML pipeline for phishing email detection using real-world datasets (Nazario corpus, PhishTank, SpamAssassin). Employed PySpark for scalable data processing and Snowflake for cloud-based storage. Achieved <strong>90%+ detection accuracy</strong> using Python (Scikit-learn, XGBoost) with MongoDB integration for comprehensive data warehousing.
+                        </div>
+                        <span style="font-style: italic; color: var(--text-muted);">Demo access available upon request</span>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">🛡️ Zero Trust Network Architecture Implementation</div>
+                        <div class="card-description">
+                            Comprehensive Zero Trust framework design with continuous verification and micro-segmentation. Implemented identity-centric security controls with behavioral analytics and risk-based authentication. Developed automated policy enforcement using software-defined perimeter technologies.
+                        </div>
+                        <span style="color: var(--secondary-color); font-weight: 500;">Research & Development Project</span>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">🔐 Secure Web Application Architecture</div>
+                        <div class="card-description">
+                            <strong>MSc Cyber Security Dissertation Project</strong> - Developed a secure e-commerce application with OWASP Top 10 protections and integrated Web Application Firewall (WAF). Conducted comprehensive vulnerability scanning and secure deployment with AI-Enhanced Threat Detection capabilities.
+                        </div>
+                        <span style="color: var(--accent-color); font-weight: 500;">Academic Excellence Project</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Open Source Contributions -->
+            <section class="section">
+                <h2 class="section-title">Recent Open Source Security Contributions</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-title">👤 User Access Auditor</div>
+                        <div class="card-description">
+                            Comprehensive Python tool for auditing user access across network devices and systems. Features AI-powered pattern recognition for identifying inactive users, privileged accounts, duplicates, and orphaned accounts.
+                        </div>
+                        <a href="https://github.com/qhazeeem/User-Access-Auditor" class="card-link" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">🌐 Advanced Network Scanner</div>
+                        <div class="card-description">
+                            Powerful and intuitive network scanner with ML-enhanced host discovery, detailed port analysis, response time optimization, and intelligent hostname resolution capabilities.
+                        </div>
+                        <a href="https://github.com/qhazeeem/network-scanner" class="card-link" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">🔒 Secure Password Generator</div>
+                        <div class="card-description">
+                            Robust Python tool generating high-entropy passwords via cryptographically secure random or catchphrase transformations, including advanced entropy scoring and quantum-resistant crack time estimates.
+                        </div>
+                        <a href="https://github.com/qhazeeem/secure-password-generator" class="card-link" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">🕷️ SWAVS (Simple Web Application Vulnerability Scanner)</div>
+                        <div class="card-description">
+                            Lightweight Python-based web vulnerability scanner covering OWASP Top 10, intelligent service detection, OS fingerprinting, and comprehensive security headers analysis.
+                        </div>
+                        <a href="https://github.com/qhazeeem/swavs" class="card-link" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">📊 Interactive Log Analysis Tool</div>
+                        <div class="card-description">
+                            AI-enhanced Python tool for multi-format log parsing and interactive visualization for advanced security incident analysis and real-time monitoring with anomaly detection.
+                        </div>
+                        <a href="https://github.com/qhazeeem/Interactive-Log-Analysis-Tool" class="card-link" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Core Technical Skills -->
+            <section class="section">
+                <h2 class="section-title">Core Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>🤖 AI Security & Machine Learning</h4>
+                        <ul class="skill-list">
+                            <li>ML-driven threat detection and behavioral analysis</li>
+                            <li>AI Security Governance & Risk Assessment</li>
+                            <li>Big Data Security Analytics (Snowflake, MongoDB)</li>
+                            <li>AI Bias Detection & Model Security</li>
+                            <li>Python (Scikit-learn, XGBoost, PySpark)</li>
+                            <li>Intelligent Automation & Anomaly Detection</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>🛡️ Advanced Network Security Architecture</h4>
+                        <ul class="skill-list">
+                            <li>Zero Trust Architecture Implementation</li>
+                            <li>Software-Defined Perimeter (SDP)</li>
+                            <li>Network Behavioral Analysis</li>
+                            <li>Secure Network Automation (Ansible)</li>
+                            <li>Cloud-Native Security (Kubernetes, Containers)</li>
+                            <li>Micro-segmentation Strategies</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>🔥 Network Security & Infrastructure</h4>
+                        <ul class="skill-list">
+                            <li>Next-Gen Firewalls (FortiGate, Palo Alto, Cisco ASA, Checkpoint, pfSense)</li>
+                            <li>Network Segmentation & VLAN Design</li>
+                            <li>VPN Architectures & Secure Routing</li>
+                            <li>Intrusion Detection & Prevention (IPS/IDS)</li>
+                            <li>High-Availability Network Architectures</li>
+                            <li>SSL Inspection & Application Control</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>🔍 SIEM & Threat Intelligence</h4>
+                        <ul class="skill-list">
+                            <li>Advanced SIEM (Splunk, ELK, FortiSIEM)</li>
+                            <li>MITRE ATT&CK Framework Implementation</li>
+                            <li>Threat Hunting & IOC Correlation</li>
+                            <li>Custom Analytics Development</li>
+                            <li>SOAR Platform Integration</li>
+                            <li>Threat Actor Profiling</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>🔬 Security Operations & Incident Response</h4>
+                        <ul class="skill-list">
+                            <li>Digital Forensics (Wireshark, IDA Pro)</li>
+                            <li>Malware Analysis & Reverse Engineering</li>
+                            <li>Crisis Management & Coordination</li>
+                            <li>Vulnerability Management (Nessus, Qualys)</li>
+                            <li>Memory Analysis & Root Cause Investigation</li>
+                            <li>Post-Incident Analysis & Reporting</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>🎯 Penetration Testing & Red Team Operations</h4>
+                        <ul class="skill-list">
+                            <li>Advanced Pen Testing (Burp Suite, Metasploit)</li>
+                            <li>Web Application Security (OWASP Top 10)</li>
+                            <li>API Security Assessment</li>
+                            <li>Social Engineering & OSINT</li>
+                            <li>Red Team Exercises & Adversary Emulation</li>
+                            <li>Multi-vector Attack Simulation</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>👨‍💼 Technical Leadership</h4>
+                        <ul class="skill-list">
+                            <li>Strategic Security Architecture Design</li>
+                            <li>Cross-functional Team Leadership</li>
+                            <li>Executive-level Security Reporting</li>
+                            <li>Crisis Management & Incident Coordination</li>
+                            <li>Technical Mentorship & Training</li>
+                            <li>Stakeholder Engagement</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>📈 Communication & Innovation</h4>
+                        <ul class="skill-list">
+                            <li>Public Speaking & Conference Presentations</li>
+                            <li>Technical Writing & Documentation</li>
+                            <li>Industry Networking & Professional Development</li>
+                            <li>Emerging Technology Evaluation</li>
+                            <li>Open Source Contribution & Community Engagement</li>
+                            <li>International Collaboration</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Professional Mentorship & Community Engagement -->
+            <section class="section">
+                <h2 class="section-title">Professional Mentorship & Community Engagement</h2>
+                
+                <div class="media-item">
+                    <div class="media-title">🎓 STEM Ambassador & Industry Mentor (Leeds Trinity University)</div>
+                    <div class="media-description">
+                        
+                        Mentoring students in STEM, Green innovation, and career development. Providing guidance on green innovation initiatives, research opportunities, and professional pathways in STEM.
+                    </div>
+                </div>
+
+                <div class="media-item">
+                    <div class="media-title">🎭 Volunteer - Bradford 2025 UK City of Culture</div>
+                    <div class="media-description">
+                        Contributing to support cultural events and digital platforms throughout Bradford's year as UK City of Culture.
+                    </div>
+                </div>
+
+                <div class="media-item">
+                    <div class="media-title">💻 Open Source Security Community Contributor</div>
+                    <div class="media-description">
+                        Active contributor to cybersecurity open source projects, regular participant in security research forums and threat intelligence sharing communities. Mentoring aspiring cybersecurity professionals through GitHub and professional networks, fostering knowledge sharing and community growth.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certifications & Continuous Learning -->
+            <section class="section">
+                <h2 class="section-title">Certifications & Continuous Learning</h2>
+                
+                <h3 class="subsection-title">Current Certifications</h3>
+                <div class="certifications-grid">
+                    <div class="cert-item">
+                        <span>🏆 Fortinet Certified Network Security Professional - NSE 4<br><small>March 2025</small></span>
+                    </div>
+                    <div class="cert-item">
+                        <span>🔥 FortiGate Firewall 7.4 Administrator<br><small>October 2024</small></span>
+                    </div>
+                    <div class="cert-item">
+                        <span>🔍 ISACA - Certified Information Systems Auditor (CISA)<br><small>December 2024</small></span>
+                    </div>
+                    <div class="cert-item">
+                        <span>📋 ISO/IEC 27001 Lead Implementer<br><small>October 2024</small></span>
+                    </div>
+                    <div class="cert-item">
+                        <span>🚨 InfoSec Risk Management & IR<br><small>January 2025</small></span>
+                    </div>
+                    <div class="cert-item">
+                        <span>🤖 Securiti AI Security & Governance<br><small>December 2024</small></span>
+                    </div>
+                    <div class="cert-item">
+                        <span>🛡️ ISC2 Certified in Cyber Security CC<br><small>December 2022</small></span>
+                    </div>
+                    <div class="cert-item">
+                        <span>☁️ AWS Certified Cloud Practitioner<br><small>November 2022</small></span>
+                    </div>
+                    <div class="cert-item">
+                        <span>☁️ Microsoft Azure Fundamentals AZ-900<br><small>October 2022</small></span>
+                    </div>
+                </div>
+                
+                <h3 class="subsection-title">Planned Certifications 2025</h3>
+                <div class="certifications-grid">
+                    <div class="cert-item">
+                        <span>🎯 CISSP - Certified Information Systems Security Professional<br><small>Target: Q3 2025</small></span>
+                    </div>
+                    <div class="cert-item">
+                        <span>🌐 Cisco CCNP Security<br><small>Target: Q4 2025</small></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-title">🎓 Master of Science: Cyber Security (Distinction)</div>
+                        <div class="card-description">
+                            <strong>University of Bradford, UK</strong><br>
+                            January 2023 – January 2024<br><br>
+                            <strong>Dissertation:</strong> Secure Web Application Architecture with AI-Enhanced Threat Detection<br>
+                            <em>Graduated with Distinction, demonstrating excellence in advanced cybersecurity concepts and research.</em>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-title">🎓 Master of Science: Information Technology (Merit)</div>
+                        <div class="card-description">
+                            <strong>National Open University, Nigeria</strong><br>
+                            October 2021 – October 2022<br><br>
+                            <em>Graduated with Merit, building strong foundation in information technology principles and systems management.</em>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-title">🎓 Bachelor of Science: Computer Science (Honours)</div>
+                        <div class="card-description">
+                            <strong>Lagos State University, Nigeria</strong><br>
+                            November 2008 – November 2012<br><br>
+                            <em>Honours degree providing comprehensive foundation in computer science, programming, and systems analysis.</em>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Professional Quote -->
+            <div class="quote">
+                Passionate about advancing cybersecurity through innovative AI applications, Zero Trust architectures, and community engagement. Committed to sharing knowledge, mentoring the next generation of security professionals, and contributing to the global cybersecurity ecosystem.
+            </div>
+        </main>
     </div>
-  </header>
 
-  <hr />
+    <script>
+        // Enhanced JavaScript for professional interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Intersection Observer for smooth animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
 
-  <!-- Socials Section -->
-  <section id="socials" aria-label="Social and Certification Links">
-    <h2>Socials </h2>
-    <ul>
-      <li>
-        <a href="https://www.linkedin.com/in/mutiu-kazeem/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
-          <!-- LinkedIn SVG Icon -->
-          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
-            <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.7v2.25h.07c.65-1.23 2.24-2.53 4.6-2.53 4.9 0 5.8 3.22 5.8 7.4V24h-5v-7.75c0-1.85-.03-4.25-2.6-4.25-2.6 0-3 2.04-3 4.13V24h-5V8z"/>
-          </svg>
-          LinkedIn
-        </a>
-      </li>
-      <li>
-        <a href="https://www.credly.com/users/mutiu-kazeem" target="_blank" rel="noopener noreferrer" aria-label="Credly Certification Profile">
-          <!-- Certification/Badge Icon SVG -->
-          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
-          Credly Certifications Badge
-        </a>
-      </li>
-    </ul>
-  </section>
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
 
-  <hr />
+            // Observe all sections for animation
+            document.querySelectorAll('.section').forEach((section, index) => {
+                section.style.animationDelay = `${index * 0.1}s`;
+                observer.observe(section);
+            });
 
-  <section id="summary">
-    <h2>Summary</h2>
-    <p>
-      Dynamic and certified Cybersecurity Professional with 10+ years of hands-on experience across IT infrastructure support, network security, SOC operations, and incident response. Holder of a Master’s in Cybersecurity (Distinction) and 15+ global certifications including Fortinet Certified Network Security Professional, Certified Information System Auditor - CISA, ISO 27001 Lead Implementer, and Azure / AWS Cloud Practitioner certifications. Proven expertise with firewall platforms (FortiGate, Palo Alto, Cisco ASA), SIEM tools (Splunk, ELK, FortiSIEM), endpoint security, and advanced network design. Currently preparing for CISSP certification to deepen strategic security leadership capabilities. Passionate about continuous learning and strengthening organisational security posture.
-    </p>
-  </section>
+            // Enhanced link tracking and accessibility
+            document.querySelectorAll('a[target="_blank"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    console.log('External link accessed:', this.href);
+                    // Add analytics tracking here if needed
+                });
 
-  <hr />
+                // Add accessibility attributes
+                link.setAttribute('rel', 'noopener noreferrer');
+                link.setAttribute('aria-describedby', 'external-link-description');
+            });
 
-  <section id="opensource">
-    <h2>Recent Open Source Contributions</h2>
+            // Smooth scrolling for internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
 
-    <div class="project-link">
-      <strong>User Access Auditor</strong><br />
-      A comprehensive Python tool for auditing user access across network devices and systems, identifying inactive users, privileged accounts, duplicates, and orphaned accounts.<br />
-      🔗 <a href="https://github.com/qhazeeem/User-Access-Auditor" target="_blank" rel="noopener noreferrer">github.com/qhazeeem/User-Access-Auditor</a>
+            // Performance optimization
+            const cards = document.querySelectorAll('.card, .skill-category, .cert-item');
+            const cardObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            cards.forEach(card => {
+                cardObserver.observe(card);
+            });
+
+            // Profile image loading optimization
+            const profileImg = document.querySelector('.profile-image');
+            if (profileImg) {
+                profileImg.addEventListener('load', function() {
+                    this.style.opacity = '1';
+                });
+
+                profileImg.addEventListener('error', function() {
+                    // Fallback for missing image
+                    this.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                    this.style.display = 'flex';
+                    this.style.alignItems = 'center';
+                    this.style.justifyContent = 'center';
+                    this.innerHTML = '<span style="font-size: 3rem; color: white;">KM</span>';
+                });
+            }
+
+            // Print optimization
+            window.addEventListener('beforeprint', function() {
+                document.querySelectorAll('.card, .skill-category').forEach(el => {
+                    el.style.breakInside = 'avoid';
+                });
+            });
+        });
+
+        // Loading state management
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+            
+            // Initialize any additional features after full load
+            console.log('Kazeem Adamson Mutiu - Professional Profile Loaded Successfully');
+        });
+
+        // Error handling for external resources
+        window.addEventListener('error', function(e) {
+            if (e.target.tagName === 'IMG') {
+                console.warn('Image failed to load:', e.target.src);
+            }
+        });
+    </script>
+
+    <!-- Hidden accessibility description -->
+    <div id="external-link-description" style="display: none;">
+        Opens in a new window or tab
     </div>
-
-    <div class="project-link">
-      <strong>Advanced Network Scanner</strong><br />
-      Powerful and intuitive network scanner that discovers active hosts with detailed port, response time, and hostname info.<br />
-      🔗 <a href="https://github.com/qhazeeem/network-scanner" target="_blank" rel="noopener noreferrer">github.com/qhazeeem/network-scanner</a>
-    </div>
-
-    <div class="project-link">
-      <strong>Secure Password Generator</strong><br />
-      Robust Python tool generating high-entropy passwords via random or catchphrase transformations, including entropy scoring and crack time estimates.<br />
-      🔗 <a href="https://github.com/qhazeeem/secure-password-generator" target="_blank" rel="noopener noreferrer">github.com/qhazeeem/secure-password-generator</a>
-    </div>
-
-    <div class="project-link">
-      <strong>SWAVS (Simple Web Application Vulnerability Scanner)</strong><br />
-      Lightweight Python-based web vulnerability scanner covering OWASP Top 10, service detection, OS fingerprinting, and security headers.<br />
-      🔗 <a href="https://github.com/qhazeeem/swavs" target="_blank" rel="noopener noreferrer">github.com/qhazeeem/swavs</a>
-    </div>
-
-    <div class="project-link">
-      <strong>Interactive Log Analysis Tool</strong><br />
-      Python tool for multi-format log parsing and interactive visualization for security incident analysis and monitoring.<br />
-      🔗 <a href="https://github.com/qhazeeem/Interactive-Log-Analysis-Tool" target="_blank" rel="noopener noreferrer">github.com/qhazeeem/Interactive-Log-Analysis-Tool</a>
-    </div>
-  </section>
-
-  <hr />
-
-  <section id="skills">
-    <h2>Core Skills</h2>
-    <ul>
-      <li><strong>Firewall & Network Security:</strong> Expert configuration of FortiGate, Palo Alto, Cisco ASA; NAT, VLAN, VPN, IPS, routing policies</li>
-      <li><strong>SIEM & Threat Detection:</strong> Skilled with Splunk, ELK, FortiSIEM for log correlation, alerting, and threat mitigation</li>
-      <li><strong>Incident Response & SOC Ops:</strong> Efficient triage, alert management, patching, and change management in live environments</li>
-      <li><strong>Security Architecture:</strong> Design and implementation of scalable, segmented, and compliant network infrastructures</li>
-      <li><strong>Forensics & Malware Analysis:</strong> Proficient with Wireshark, Cuckoo Sandbox, IDA Pro for root cause and malware investigation</li>
-      <li><strong>Vulnerability & Pen Testing:</strong> Hands-on with Nessus, Qualys, Burp Suite, Nikto, Metasploit, OWASP ZAP</li>
-      <li><strong>Endpoint & Cloud Security:</strong> Hardening EDR solutions, Defender, AWS/Azure cloud security, IAM, encryption, policy enforcement</li>
-      <li><strong>Compliance & Risk Management:</strong> In-depth ISO 27001, NIST, GDPR, HIPAA knowledge, with risk assessment and audit experience</li>
-      <li><strong>Leadership & Communication:</strong> Team mentoring, stakeholder engagement, cross-functional collaboration</li>
-      <li><strong>Automation & Scripting:</strong> Python scripting for incident automation, Ansible for infrastructure orchestration</li>
-      <li><strong>Technical Documentation:</strong> Precise SOPs, root cause reports, change logs aligned with SLAs</li>
-      <li><strong>Soft Skills:</strong> Effective communication, problem-solving, adaptability, time management, and collaboration</li>
-    </ul>
-  </section>
-
-  <hr />
-
-  <section id="certifications">
-    <h2>Certifications</h2>
-    <ul>
-      <li>ISC2 CISSP (In Progress)</li>
-      <li>Fortinet NSE 4 (March 2025)</li>
-      <li>Fortinet FortiGate Firewall 7.4 Administrator (October 2024)</li>
-      <li>ISC2 Certified in Cyber Security CC (December 2022)</li>
-      <li>AWS Certified Cloud Practitioner (Nov 2022)</li>
-      <li>Microsoft Azure Fundamentals AZ-900 (Oct 2022)</li>
-      <li>ISACA CISA (Dec 2024)</li>
-      <li>PECB ISO/IEC 27001 Lead Implementer (Oct 2024)</li>
-      <li>InfoSec Enterprise Security Risk Management & Incident Response (Jan 2025)</li>
-      <li>Securiti AI Security & Governance & PrivacyOps (Dec 2024)</li>
-    </ul>
-  </section>
-
-  <hr />
-
-  <section id="projects">
-    <h2>Selected Projects</h2>
-
-    <h3>Firewall & Endpoint Security Optimisation | Talk Straight Group</h3>
-    <ul>
-      <li>Enhanced firewall policies and endpoint security across 3,000+ UK schools and NHS Trusts</li>
-      <li>Reduced firewall misconfigurations by 35% and endpoint-related incidents by 30%</li>
-    </ul>
-
-    <h3>Penetration Testing & Vulnerability Assessment | Kharah Solutions</h3>
-    <ul>
-      <li>Conducted internal/external pen tests on cloud assets using Nessus, Burp Suite, Metasploit</li>
-      <li>Identified and remediated high-risk vulnerabilities, shrinking attack surface by 40%</li>
-    </ul>
-
-    <h3>Secure Web Application Architecture | Msc Cyber Security’s Dissertation</h3>
-    <ul>
-      <li>Developed a secure e-commerce app with OWASP Top 10 protections and integrated WAF</li>
-      <li>Conducted comprehensive vulnerability scanning and secure deployment</li>
-    </ul>
-
-    <h3>Avaya Contact Centre & Communication Solution Implementation | Simba Infrastructure Limited </h3>
-    <ul>
-      <li>Led the successful implementation of Avaya Contact Centre and communication solutions for major banks at both primary and disaster recovery sites.</li>
-      <li>Ensured high availability, robust disaster recovery readiness, and seamless integration of communication systems across enterprise environments.</li>
-      <li>Delivered solutions to prominent clients including Access Bank, Stanbic IBTC Bank, Standard Chartered Bank, 9 Mobile Nigeria, United Bank for Africa, and other leading organizations across Nigeria and Africa.</li>
-    </ul>
-  </section>
-
-  <hr />
-
-  <section id="experience">
-    <h2>Professional Experience</h2>
-
-    <h3>Second Line Technical Support Engineer<br /><small>Talk Straight Group | June 2024 – Present</small></h3>
-    <ul>
-      <li>Spearhead network and endpoint security management for a diverse client base of 3,000+ UK schools and NHS Trusts, ensuring robust protection using Fortinet firewalls, VPNs, Endpoint Detection and Response (EDR), and Intrusion Prevention Systems (IPS).</li>
-      <li>Lead real-time threat investigations using advanced SIEM tools such as FortiSIEM, ELK Stack, Microsoft Defender for Endpoint, and network packet captures, significantly reducing incident response times.</li>
-      <li>Design and implement network segmentation strategies by reconfiguring VLANs and NAT policies to enhance security posture and ensure regulatory compliance.</li>
-      <li>Coordinate and execute weekly change management processes, including patch deployment and firewall signature updates, minimizing downtime and vulnerability exposure.</li>
-      <li>Mentor and develop junior engineers through structured knowledge transfer sessions, improving team competency and adherence to operational SLAs.</li>
-      <li>Maintain meticulous documentation of incident investigations, resolution procedures, and network changes, supporting audit readiness and continuous improvement initiatives.</li>
-    </ul>
-
-    <h3>Information Security Analyst – Security Operations<br /><small>Kharah Solutions | September 2022 – April 2024</small></h3>
-    <ul>
-      <li>Managed deployment and optimization of SIEM, Endpoint Detection & Response (EDR), and IDS/IPS technologies across multi-client environments, tailoring configurations to meet diverse security requirements.</li>
-      <li>Conducted comprehensive incident response and forensic investigations, leveraging the MITRE ATT&CK framework to identify attack vectors and implement effective remediation strategies.</li>
-      <li>Collaborated with internal teams and third-party vendors to lead root cause analysis and technical change management, enhancing SOC operational maturity and reducing recurring incidents.</li>
-      <li>Developed and enforced security policies, performed security health checks beyond SIEM scope, and drove SOC performance improvements through KPI monitoring and process refinement.</li>
-      <li>Played a key role in aligning security architecture designs with client operational models and regulatory compliance mandates.</li>
-    </ul>
-
-    <h3>Head Of Technical Department<br /><small>Simba Infrastructure Limited | March 2018 – August 2022</small></h3>
-    <ul>
-      <li>Directed a 14-person technical team delivering enterprise communication and cybersecurity services, achieving a 30% increase in operational efficiency through strategic process enhancements and resource management.</li>
-      <li>Led incident response planning, infrastructure design, and network reconfiguration projects that strengthened organizational resilience against emerging cyber threats.</li>
-      <li>Developed and implemented security controls, risk assessments, and mitigation plans, aligning with industry standards to safeguard critical infrastructure.</li>
-      <li>Championed organization-wide cybersecurity awareness programs, resulting in measurable improvements in user behavior and security posture.</li>
-      <li>Coordinated cross-functional collaborations with vendors and internal stakeholders to execute system upgrades and ensure high availability with minimal disruption.</li>
-    </ul>
-
-    <h3>Technical Support Analyst<br /><small>Simba Infrastructure Limited | February 2015 – February 2018</small></h3>
-    <ul>
-      <li>Delivered Level 1 and Level 2 support for enterprise IT infrastructure with a focus on network security, VPN configuration, and Microsoft 365 environments.</li>
-      <li>Supported firewall setup, security patch management, and compliance initiatives aligned with ISO 27001 and GDPR standards.</li>
-      <li>Developed automation scripts for incident response and log correlation, enhancing response times and increasing SLA compliance by 15%.</li>
-      <li>Assisted in drafting technical documentation and contributed to process improvements across the support team.</li>
-    </ul>
-  </section>
-
-  <hr />
-
-  <section id="publications">
-    <h2>Publications & Academic Work</h2>
-    <p>
-      <strong>Zero Trust 2.0: Advances, Challenges, and Future Directions in ZTA</strong><br />
-      A critical exploration of Zero Trust Architecture evolution and adoption across sectors (2020–2025).<br />
-      🔗 <a href="https://www.researchsquare.com/article/rs-6602547/v1" target="_blank" rel="noopener noreferrer">Read the preprint here</a>
-    </p>
-  </section>
-
-  <hr />
-
-  <section id="volunteer-media">
-    <h2>Volunteer & Media</h2>
-    <ul>
-      <li>Guest Speaker on Channels TV discussing Cybersecurity and AI’s impact on Nigeria’s digital future – <a href="https://www.youtube.com/watch?v=RVbvJl89n5A" target="_blank" rel="noopener noreferrer">Watch here</a></li>
-      <li>STEM Ambassador & STEM Industry Mentor - Leeds Trinity University</li>
-      <li>Volunteer, Bradford 2025 UK City of Culture</li>
-    </ul>
-  </section>
-
-  <hr />
-
-  <section id="education">
-    <h2>Education</h2>
-    <ul>
-      <li><strong>Master of Science: Cyber Security (Distinction)</strong><br />University of Bradford, UK | January 2023 – January 2024</li>
-      <li><strong>Master of Science: Information Technology (Merit)</strong><br />National Open University, Nigeria | October 2021 – October 2022</li>
-      <li><strong>Bachelor of Science: Computer Science (Hons)</strong><br />Lagos State University, Nigeria | November 2008 – November 2012</li>
-    </ul>
-  </section>
 </body>
 </html>
