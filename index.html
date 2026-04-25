@@ -1,459 +1,855 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kazeem Mutiu Adamson | Cybersecurity Architect</title>
-    <style>
-        :root {
-            --primary: #1a365d;
-            --secondary: #2c5282;
-            --accent: #3182ce;
-            --text: #2d3748;
-            --text-light: #4a5568;
-            --bg: #f7fafc;
-            --white: #ffffff;
-            --border: #e2e8f0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kazeem Mutiu Adamson — Cybersecurity Architect</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Overpass+Mono:wght@300;400;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+  :root {
+    --black: #0a0a0a;
+    --white: #f7f6f2;
+    --mid: #888;
+    --light: #d8d6d0;
+    --rule: #222;
+  }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: var(--white);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+  html { scroll-behavior: smooth; }
 
-        header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: var(--white);
-            padding: 3rem 2rem;
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
+  body {
+    background: var(--white);
+    color: var(--black);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
 
-        .profile-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            object-fit: cover;
-            flex-shrink: 0;
-        }
+  /* ─── LAYOUT ─────────────────────────────────────── */
 
-        .header-content {
-            flex: 1;
-            min-width: 250px;
-        }
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
 
-        h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
+  /* ─── HEADER ─────────────────────────────────────── */
 
-        .title {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 1rem;
-        }
+  header {
+    padding: 4rem 0 2.5rem;
+    border-bottom: 2px solid var(--black);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: end;
+  }
 
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            font-size: 0.95rem;
-        }
+  .header-left {}
 
-        .contact-info a {
-            color: var(--white);
-            text-decoration: none;
-            opacity: 0.9;
-        }
+  .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.6rem, 6vw, 4.2rem);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 0.6rem;
+  }
 
-        .contact-info a:hover {
-            opacity: 1;
-            text-decoration: underline;
-        }
+  .name em {
+    font-style: italic;
+    font-weight: 300;
+  }
 
-        main {
-            padding: 2rem;
-        }
+  .title-line {
+    font-family: 'Overpass Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 1rem;
+  }
 
-        section {
-            margin-bottom: 2.5rem;
-        }
+  .meta-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
 
-        h2 {
-            color: var(--primary);
-            font-size: 1.3rem;
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.2rem;
-        }
+  .tag {
+    font-family: 'Overpass Mono', monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 1px solid var(--black);
+    padding: 0.2rem 0.55rem;
+    display: inline-block;
+  }
 
-        h3 {
-            color: var(--secondary);
-            font-size: 1.1rem;
-            margin-bottom: 0.3rem;
-        }
+  .portrait-wrap {
+    width: 120px;
+    height: 150px;
+    border: 2px solid var(--black);
+    overflow: hidden;
+    flex-shrink: 0;
+  }
 
-        .job {
-            margin-bottom: 1.5rem;
-        }
+  .portrait-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(1.05);
+    display: block;
+  }
 
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
-        }
+  /* ─── NAV RULE ───────────────────────────────────── */
 
-        .company {
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
+  .section-nav {
+    display: flex;
+    gap: 2rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--light);
+    flex-wrap: wrap;
+  }
 
-        .date {
-            color: var(--accent);
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
+  .section-nav a {
+    font-family: 'Overpass Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
 
-        ul {
-            margin-left: 1.5rem;
-            margin-top: 0.5rem;
-        }
+  .section-nav a:hover { color: var(--black); }
 
-        li {
-            margin-bottom: 0.5rem;
-            color: var(--text-light);
-        }
+  /* ─── SUMMARY ─────────────────────────────────────── */
 
-        .publication {
-            background: var(--bg);
-            padding: 1.2rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            border-left: 4px solid var(--accent);
-        }
+  .summary-block {
+    padding: 3rem 0;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 3rem;
+    border-bottom: 1px solid var(--light);
+    align-items: start;
+  }
 
-        .publication-title {
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 0.3rem;
-        }
+  .summary-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.15;
+    color: var(--black);
+    padding-top: 0.2rem;
+  }
 
-        .publication-venue {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin-bottom: 0.5rem;
-        }
+  .summary-text p {
+    font-size: 1rem;
+    line-height: 1.75;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    max-width: 640px;
+  }
 
-        .publication-doi {
-            font-size: 0.85rem;
-            color: var(--accent);
-        }
+  .summary-text p:last-child { margin-bottom: 0; }
 
-        .speaking {
-            margin-bottom: 1.2rem;
-        }
+  /* ─── SECTION WRAPPER ────────────────────────────── */
 
-        .speaking-title {
-            font-weight: 600;
-            color: var(--secondary);
-        }
+  .section {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--light);
+  }
 
-        .speaking-details {
-            font-size: 0.95rem;
-            color: var(--text-light);
-        }
+  .section:last-of-type { border-bottom: none; }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.2rem;
+    margin-bottom: 2.2rem;
+  }
 
-        .skill-category h4 {
-            color: var(--secondary);
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-        }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem;
+    font-weight: 300;
+    font-style: italic;
+  }
 
-        .skill-category p {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
+  .section-count {
+    font-family: 'Overpass Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    color: var(--mid);
+    text-transform: uppercase;
+  }
 
-        .education-item {
-            margin-bottom: 1rem;
-        }
+  /* ─── EXPERIENCE ─────────────────────────────────── */
 
-        .education-item h3 {
-            margin-bottom: 0.2rem;
-        }
+  .job {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px dashed var(--light);
+  }
 
-        .education-details {
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
+  .job:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
 
-        .cert {
-            display: inline-block;
-            background: var(--bg);
-            padding: 0.4rem 0.8rem;
-            border-radius: 4px;
-            margin: 0.3rem 0.3rem 0.3rem 0;
-            font-size: 0.9rem;
-            color: var(--secondary);
-        }
+  .job-meta {}
 
-        .leadership-item {
-            margin-bottom: 1.2rem;
-        }
+  .job-period {
+    font-family: 'Overpass Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--mid);
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+    display: block;
+  }
 
-        footer {
-            background: var(--primary);
-            color: var(--white);
-            text-align: center;
-            padding: 1.5rem;
-            font-size: 0.9rem;
-        }
+  .job-company {
+    font-size: 0.85rem;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 0.2rem;
+  }
 
-        @media (max-width: 600px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-                padding: 2rem 1rem;
-            }
+  .job-location {
+    font-size: 0.72rem;
+    color: var(--mid);
+    font-style: italic;
+  }
 
-            .contact-info {
-                justify-content: center;
-            }
+  .job-content .job-role {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+  }
 
-            h1 {
-                font-size: 1.8rem;
-            }
+  .job-content ul {
+    list-style: none;
+    padding: 0;
+  }
 
-            main {
-                padding: 1.5rem 1rem;
-            }
+  .job-content ul li {
+    padding-left: 1.1rem;
+    position: relative;
+    margin-bottom: 0.45rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
 
-            .job-header {
-                flex-direction: column;
-            }
-        }
+  .job-content ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--mid);
+    font-size: 0.75rem;
+    top: 0.05em;
+  }
 
-        @media print {
-            .container {
-                box-shadow: none;
-            }
+  /* ─── RESEARCH ───────────────────────────────────── */
 
-            header {
-                padding: 1.5rem;
-            }
+  .paper {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px dashed var(--light);
+  }
 
-            main {
-                padding: 1rem;
-            }
+  .paper:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
 
-            section {
-                margin-bottom: 1.5rem;
-            }
-        }
-    </style>
+  .paper-venue {
+    font-family: 'Overpass Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    color: var(--mid);
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
+
+  .paper-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    font-style: italic;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+  }
+
+  .paper-desc {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+
+  .paper-link {
+    font-family: 'Overpass Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    color: var(--mid);
+    text-decoration: none;
+    border-bottom: 1px solid var(--light);
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .paper-link:hover { color: var(--black); border-color: var(--black); }
+
+  /* ─── SPEAKING ───────────────────────────────────── */
+
+  .talks-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .talk-card {
+    border: 1px solid var(--black);
+    padding: 1.4rem 1.2rem;
+  }
+
+  .talk-event {
+    font-family: 'Overpass Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 0.5rem;
+  }
+
+  .talk-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    font-style: italic;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+  }
+
+  .talk-detail {
+    font-size: 0.82rem;
+    color: #444;
+    line-height: 1.5;
+  }
+
+  .talk-link {
+    font-family: 'Overpass Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    color: var(--mid);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 0.5rem;
+    border-bottom: 1px solid var(--light);
+    transition: all 0.2s;
+  }
+
+  .talk-link:hover { color: var(--black); border-color: var(--black); }
+
+  /* ─── LEADERSHIP ─────────────────────────────────── */
+
+  .leadership-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .leadership-card {
+    padding: 1.4rem 0;
+    border-top: 2px solid var(--black);
+  }
+
+  .lc-org {
+    font-family: 'Overpass Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 0.4rem;
+  }
+
+  .lc-role {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+  }
+
+  .lc-desc {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  /* ─── SKILLS ─────────────────────────────────────── */
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .skill-group {}
+
+  .skill-group-label {
+    font-family: 'Overpass Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--black);
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .skill-group ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .skill-group ul li {
+    font-size: 0.83rem;
+    line-height: 1.55;
+    padding-left: 0.8rem;
+    position: relative;
+    color: #333;
+  }
+
+  .skill-group ul li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+  }
+
+  /* ─── EDUCATION & CERTS ──────────────────────────── */
+
+  .edu-certs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .edu-item {
+    margin-bottom: 1.2rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px dashed var(--light);
+  }
+
+  .edu-item:last-child { border-bottom: none; }
+
+  .edu-degree {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .edu-inst {
+    font-size: 0.82rem;
+    color: #444;
+    margin-top: 0.15rem;
+  }
+
+  .edu-year {
+    font-family: 'Overpass Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--mid);
+    letter-spacing: 0.08em;
+  }
+
+  .certs-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    align-content: flex-start;
+  }
+
+  .cert-badge {
+    font-family: 'Overpass Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    border: 1px solid var(--black);
+    padding: 0.25rem 0.55rem;
+    line-height: 1;
+  }
+
+  /* ─── FOOTER ─────────────────────────────────────── */
+
+  footer {
+    padding: 2rem 0;
+    border-top: 2px solid var(--black);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--mid);
+  }
+
+  .footer-location {
+    font-family: 'Overpass Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mid);
+  }
+
+  /* ─── ANIMATIONS ─────────────────────────────────── */
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  header { animation: fadeUp 0.6s ease both; }
+  .summary-block { animation: fadeUp 0.6s 0.1s ease both; }
+  .section { animation: fadeUp 0.6s 0.15s ease both; }
+
+  /* ─── RESPONSIVE ─────────────────────────────────── */
+
+  @media (max-width: 720px) {
+    header {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .portrait-wrap {
+      width: 90px;
+      height: 112px;
+    }
+
+    .summary-block,
+    .job,
+    .paper {
+      grid-template-columns: 1fr;
+      gap: 0.6rem;
+    }
+
+    .job-meta { display: flex; gap: 1rem; flex-wrap: wrap; align-items: baseline; }
+
+    .talks-grid,
+    .leadership-grid,
+    .skills-grid,
+    .edu-certs {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media print {
+    body { background: white; }
+    .section-nav { display: none; }
+    .page { max-width: 100%; padding: 0 1.5cm; }
+    header { padding: 1.5cm 0 1rem; }
+    @page { margin: 1cm; }
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <img src="kazeem.png" alt="Kazeem Mutiu Adamson" class="profile-photo">
-            <div class="header-content">
-                <h1>Kazeem Mutiu Adamson</h1>
-                <p class="title">Cybersecurity Architect | AI Security Researcher</p>
-                <div class="contact-info">
-                    <span>+44 07543769416</span>
-                    <a href="/cdn-cgi/l/email-protection#6b000a123411020e5f1e2b120a03040445080406"><span class="__cf_email__" data-cfemail="7b101a022401121e4f0e3b021a13141455181416">[email&#160;protected]</span></a>
-                    <span>United Kingdom</span>
-                    <a href="https://www.linkedin.com/in/kazeem-mutiu/" target="_blank">LinkedIn</a>
-                </div>
-            </div>
-        </header>
 
-        <main>
-            <section id="summary">
-                <h2>Professional Summary</h2>
-                <p>Cybersecurity Architect specializing in secure AI systems and Zero Trust Architecture, with demonstrated leadership in designing security frameworks for AI-driven platforms handling sensitive intellectual property at scale. Track record of technical innovation through peer-reviewed ACM publication on autonomous AI security systems, systematic Zero Trust research, and security architecture design enabling international expansion across three regulatory jurisdictions (UK, Nigeria, Brazil).</p>
-                <p style="margin-top: 0.8rem;">Recognized as an emerging leader in AI security through invited speaking at API Days London international conference, research presentation at ICAAI Manchester, and expert media commentary on cybersecurity policy reaching 100M+ viewers nationally. Active contributor to the UK cybersecurity ecosystem through ISACA Northern England board leadership and STEM Ambassador program mentorship, reaching 1,306 students across Leeds universities.</p>
-            </section>
+<div class="page">
 
-            <section id="experience">
-                <h2>Professional Experience</h2>
-                
-                <div class="job">
-                    <div class="job-header">
-                        <div>
-                            <h3>Cybersecurity Architect</h3>
-                            <p class="company">PlotWeaver Limited | London, UK</p>
-                        </div>
-                        <span class="date">January 2025 - Present</span>
-                    </div>
-                    <ul>
-                        <li>Lead security architect for AI-powered storytelling platform processing confidential manuscripts through large language models. Report directly to CEO with full authority over security decisions affecting UK and international operations.</li>
-                        <li><strong>AI Security Architecture:</strong> Designed six-layer defence-in-depth architecture addressing AI-specific threats: prompt injection attacks, model memorization risks, and cross-session data leakage. Implemented cryptographic session binding, architectural separation isolating system prompts from user content, and multi-provider abstraction enabling vendor switching.</li>
-                        <li><strong>International Expansion:</strong> Built privacy-by-design architecture enabling simultaneous compliance with UK GDPR, Nigerian NDPR, and Brazilian LGPD. Designed cross-border data governance framework supporting international expansion without market-specific architectural modifications.</li>
-                        <li>Led technical security review enabling Nigeria Film Corporation partnership (first enterprise customer), requiring institutional-grade data protection and SAML integration for governance requirements.</li>
-                    </ul>
-                </div>
+  <!-- ── HEADER ── -->
+  <header>
+    <div class="header-left">
+      <h1 class="name">Kazeem <em>Mutiu</em> Adamson</h1>
+      <p class="title-line">Cybersecurity Architect &nbsp;·&nbsp; AI Security Researcher &nbsp;·&nbsp; Network Security</p>
+      <div class="meta-tags">
+        <span class="tag">United Kingdom</span>
+        <span class="tag">ACM Published</span>
+        <span class="tag">ISACA Board Member</span>
+        <span class="tag">CISA</span>
+        <span class="tag">ISO 27001 LI</span>
+      </div>
+    </div>
+    <div class="portrait-wrap">
+      <img src="kazeem.png" alt="Kazeem Mutiu Adamson">
+    </div>
+  </header>
 
-                <div class="job">
-                    <div class="job-header">
-                        <div>
-                            <h3>2nd Line Technical Support (Network Security Engineer)</h3>
-                            <p class="company">Talk Straight Group</p>
-                        </div>
-                        <span class="date">June 2024 - Present (Part-time)</span>
-                    </div>
-                    <ul>
-                        <li>Manage network security infrastructure supporting over 3000 UK schools and NHS Trusts, including FortiGate firewalls, VPNs, and endpoint protection.</li>
-                        <li>Lead investigation and remediation of high-priority security incidents. Reduced incident resolution times by 35% through Python and Ansible automation.</li>
-                    </ul>
-                </div>
+  <!-- ── NAV ── -->
+  <nav class="section-nav">
+    <a href="#summary">Profile</a>
+    <a href="#experience">Experience</a>
+    <a href="#research">Research</a>
+    <a href="#speaking">Speaking</a>
+    <a href="#leadership">Leadership</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+  </nav>
 
-                <div class="job">
-                    <div class="job-header">
-                        <div>
-                            <h3>Senior Technical Consultant</h3>
-                            <p class="company">Kharah Solutions</p>
-                        </div>
-                        <span class="date">September 2022 - May 2024</span>
-                    </div>
-                    <ul>
-                        <li>Designed and implemented secure Unified Communications, Contact Centre, and network security solutions for enterprise clients.</li>
-                        <li>Conducted root cause analyses for security incidents, implementing long-term remediation controls. Delivered 10+ projects with zero post-implementation escalations.</li>
-                    </ul>
-                </div>
-            </section>
+  <!-- ── SUMMARY ── -->
+  <div class="summary-block" id="summary">
+    <div class="summary-label">Professional<br>Profile</div>
+    <div class="summary-text">
+      <p>
+        Over a decade building and securing infrastructure across public sector, education, and enterprise environments. My work spans network security, cloud architecture, incident response, and AI security research.
+      </p>
+      <p>
+        Currently a Cybersecurity Architect at West Yorkshire Combined Authority, I work alongside a Managed SOC to deliver the organisation's Cyber Security Strategy, managing vulnerability programmes and responding to incidents across critical public infrastructure. I've deployed firewalls and security controls at scale, led engineering teams, and advised organisations on ISO 27001 and NIST-aligned risk frameworks.
+      </p>
+      <p>
+        My research sits at the intersection of AI and cybersecurity. I've published peer-reviewed work in ACM proceedings and spoken at international conferences, including a keynote session at apidays London on securing APIs in Zero Trust environments.
+      </p>
+    </div>
+  </div>
 
-            <section id="research">
-                <h2>Research Contributions & Academic Publications</h2>
-                
-                <div class="publication">
-                    <p class="publication-title">"CoGuard: A Large Language Model-based Multi-Agent System for Autonomous Security Policy Enforcement"</p>
-                    <p class="publication-venue">9th International Conference on Advances in Artificial Intelligence (ICAAI 2025), Manchester, UK | Association for Computing Machinery (ACM) | November 2025</p>
-                    <p class="publication-doi">DOI: 10.1145/3787279.3787301</p>
-                    <p style="margin-top: 0.8rem; font-size: 0.95rem;">Led original research developing the first LLM-based multi-agent framework for autonomous cloud security policy enforcement. Designed cloud-adapted TRiSM framework addressing AI safety and explainability. Created Byzantine consensus algorithms achieving 97% consensus accuracy with sub-200ms latency across 2,500 cloud resources.</p>
-                </div>
+  <!-- ── EXPERIENCE ── -->
+  <section class="section" id="experience">
+    <div class="section-header">
+      <h2 class="section-title">Experience</h2>
+      <span class="section-count">03 Roles</span>
+    </div>
 
-                <div class="publication">
-                    <p class="publication-title">"Zero Trust 2.0: Advances, Challenges, and Future Directions in Zero Trust Architecture"</p>
-                    <p class="publication-venue">ResearchSquare | 400+ views | May 2024</p>
-                    <p class="publication-doi">DOI: rs-6602547/v1</p>
-                    <p style="margin-top: 0.8rem; font-size: 0.95rem;">Systematic analysis of 87 Zero Trust implementations across financial services, healthcare, government, and technology sectors (2020-2025), demonstrating 73% reduction in breach severity. Research conducted under academic mentorship from Dr Amna Qureshi, University of Bradford.</p>
-                </div>
-            </section>
+    <div class="job">
+      <div class="job-meta">
+        <span class="job-period">Feb 2026 — Present</span>
+        <div class="job-company">West Yorkshire Combined Authority</div>
+        <div class="job-location">Leeds, UK</div>
+      </div>
+      <div class="job-content">
+        <div class="job-role">Cybersecurity Architect</div>
+        <ul>
+          <li>Design and continuously improve security architecture and controls across Combined Authority systems, staying ahead of emerging threats.</li>
+          <li>Collaborate with the Cyber Security Manager and Managed SOC to deliver the Cyber Security Strategy, investigate events, and lead incident response.</li>
+          <li>Evaluate and deploy security technologies including Palo Alto and Cisco FTD/FMC, endpoint protection, and antimalware solutions.</li>
+          <li>Manage cloud security across Microsoft Azure services: Intune, Entra ID, and Web Application Firewall.</li>
+          <li>Develop and maintain security policies aligned with ISO/IEC 27000; lead phishing simulation programmes and audit readiness.</li>
+        </ul>
+      </div>
+    </div>
 
-            <section id="speaking">
-                <h2>Speaking Engagements & Media Recognition</h2>
-                
-                <div class="speaking">
-                    <p class="speaking-title">Conference Presenter | ICAAI 2025 Manchester</p>
-                    <p class="speaking-details">"CoGuard: A Large Language Model-based Multi-Agent System for Autonomous Security Policy Enforcement" - Presented peer-reviewed research as lead author at ACM's 9th International Conference on Advances in Artificial Intelligence | November 2025</p>
-                </div>
+    <div class="job">
+      <div class="job-meta">
+        <span class="job-period">Jun 2024 — Feb 2026</span>
+        <div class="job-company">Talk Straight Group</div>
+        <div class="job-location">UK</div>
+      </div>
+      <div class="job-content">
+        <div class="job-role">Network Security Engineer (2nd Line)</div>
+        <ul>
+          <li>Manage and optimise FortiGate firewalls, IPSec VPNs, and endpoint security policies for 3,000+ UK schools and NHS Trusts.</li>
+          <li>Conduct incident triage using FortiSIEM and EDR tools, reducing resolution time by 25% and improving SLA compliance.</li>
+          <li>Configure VLANs, subnets, and NAT rules to meet regulatory security standards; mentor junior engineers.</li>
+        </ul>
+      </div>
+    </div>
 
-                <div class="speaking">
-                    <p class="speaking-title">Invited Conference Speaker | API Days London 2024</p>
-                    <p class="speaking-details">"Securing APIs in a Zero Trust Network Environment" | 23 September 2024 | Convene, 155 Bishopsgate, London - Delivered practical guidance on implementing Zero Trust principles for API-driven and AI-enabled systems to senior technology leaders across Europe.</p>
-                </div>
+    <div class="job">
+      <div class="job-meta">
+        <span class="job-period">Sep 2022 — May 2024</span>
+        <div class="job-company">Kharah Solutions</div>
+        <div class="job-location">UK</div>
+      </div>
+      <div class="job-content">
+        <div class="job-role">Senior Technical Consultant</div>
+        <ul>
+          <li>Designed and implemented secure Unified Communications, Contact Centre, and network security solutions for enterprise clients.</li>
+          <li>Led root cause analyses for security incidents and delivered 10+ projects with zero post-implementation escalations.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-                <div class="speaking">
-                    <p class="speaking-title">Expert Media Commentary | National Television</p>
-                    <p class="speaking-details">Channels Television - Business Incorporated (19 May 2025): Expert analysis on AI shaping cybersecurity in Nigeria. TVC News - This Morning (24 November 2025): Commentary on proposed cybersecurity legislation. Both broadcasts reached 100M+ potential viewers.</p>
-                </div>
-            </section>
+  <!-- ── RESEARCH ── -->
+  <section class="section" id="research">
+    <div class="section-header">
+      <h2 class="section-title">Research & Publications</h2>
+      <span class="section-count">02 Papers</span>
+    </div>
 
-            <section id="leadership">
-                <h2>Professional Leadership & Ecosystem Contribution</h2>
-                
-                <div class="leadership-item">
-                    <h3>Board Member | ISACA Northern England Chapter</h3>
-                    <p style="color: var(--text-light); font-size: 0.95rem;">Contributes to governance and strategic direction serving cybersecurity professionals across Yorkshire and Northeast England. Responsibilities include Digital Infrastructure Governance, Young Professionals Program, and Member Engagement. Endorsed by Chapter President Marianne Coop.</p>
-                </div>
+    <div class="paper">
+      <div class="paper-venue">ACM &middot; ICAAI 2025<br>Manchester, UK<br>Nov 2025</div>
+      <div>
+        <div class="paper-title">CoGuard: A Large Language Model-based Multi-Agent System for Autonomous Security Policy Enforcement</div>
+        <p class="paper-desc">Led original research developing the first LLM-based multi-agent framework for autonomous cloud security policy enforcement. Designed a cloud-adapted TRiSM framework addressing AI safety and explainability. Created Byzantine consensus algorithms achieving 97% consensus accuracy with sub-200ms latency across 2,500 cloud resources.</p>
+        <a class="paper-link" href="https://dl.acm.org/doi/10.1145/3787279.3787301" target="_blank">dl.acm.org → View Publication</a>
+      </div>
+    </div>
 
-                <div class="leadership-item">
-                    <h3>STEM Ambassador | STEM Learning (National STEM Learning Network)</h3>
-                    <p style="color: var(--text-light); font-size: 0.95rem;">Providing industry mentorship to students at Leeds University Business School and Leeds Trinity University. Dedicated 60 hours reaching 1,306 participants, focusing on cybersecurity career pathways. Official recognition for "dedication to engaging groups from a diverse range of backgrounds."</p>
-                </div>
-            </section>
+    <div class="paper">
+      <div class="paper-venue">ResearchSquare<br>400+ Views<br>May 2024</div>
+      <div>
+        <div class="paper-title">Zero Trust 2.0: Advances, Challenges, and Future Directions in Zero Trust Architecture</div>
+        <p class="paper-desc">Systematic analysis of 87 Zero Trust implementations across financial services, healthcare, government, and technology sectors (2020–2025), demonstrating a 73% reduction in breach severity. Conducted under academic mentorship from Dr Amna Qureshi, University of Bradford.</p>
+        <a class="paper-link" href="#" target="_blank">DOI: rs-6602547/v1 → View Preprint</a>
+      </div>
+    </div>
+  </section>
 
-            <section id="education">
-                <h2>Education & Professional Certifications</h2>
-                
-                <div class="education-item">
-                    <h3>MSc Cybersecurity (Distinction)</h3>
-                    <p class="education-details">University of Bradford, UK | 2024</p>
-                    <p class="education-details">Dissertation: Web Application Security (73%) | Applied Cryptography (88%), Network Security (85%), ISO 27000 Framework (84%)</p>
-                </div>
+  <!-- ── SPEAKING ── -->
+  <section class="section" id="speaking">
+    <div class="section-header">
+      <h2 class="section-title">Speaking & Media</h2>
+      <span class="section-count">04 Engagements</span>
+    </div>
 
-                <div class="education-item">
-                    <h3>MSc Information Technology</h3>
-                    <p class="education-details">National Open University, Nigeria | 2022</p>
-                </div>
+    <div class="talks-grid">
+      <div class="talk-card">
+        <div class="talk-event">ICAAI 2025 &middot; Manchester</div>
+        <div class="talk-title">CoGuard: LLM-based Multi-Agent System for Autonomous Security Policy Enforcement</div>
+        <p class="talk-detail">Lead author presentation at ACM's 9th International Conference on Advances in Artificial Intelligence. November 2025.</p>
+      </div>
 
-                <div class="education-item">
-                    <h3>BSc Computer Science</h3>
-                    <p class="education-details">Lagos State University, Nigeria | 2012</p>
-                </div>
+      <div class="talk-card">
+        <div class="talk-event">apidays London 2024</div>
+        <div class="talk-title">Securing APIs in a Zero Trust Network Environment</div>
+        <p class="talk-detail">45-minute invited session at Convene, 155 Bishopsgate. Delivered practical guidance on Zero Trust principles for API-driven and AI-enabled systems to senior technology leaders across Europe. 23 September 2024.</p>
+      </div>
 
-                <div style="margin-top: 1rem;">
-                    <span class="cert">CISA | ISACA | 2024</span>
-                    <span class="cert">PECB ISO 27001 Lead Implementer</span>
-                    <span class="cert">Enterprise Security Risk Management</span>
-                    <span class="cert">AI Security & Governance</span>
-                    <span class="cert">Incident Response</span>
-                    <span class="cert">PrivacyOps (GDPR)</span>
-                    <span class="cert">Fortinet NSE 4</span>
-                    <span class="cert">Azure Fundamentals AZ-900</span>
-                    <span class="cert">AWS Cloud Practitioner</span>
-                </div>
-            </section>
+      <div class="talk-card">
+        <div class="talk-event">Channels Television &middot; May 2025</div>
+        <div class="talk-title">AI Shaping Cybersecurity</div>
+        <p class="talk-detail">Expert analysis on national television. Business Incorporated programme. 100M+ potential viewer reach.</p>
+        <a class="talk-link" href="https://www.youtube.com/watch?v=RVbvJl89n5A" target="_blank">Watch Recording →</a>
+      </div>
 
-            <section id="skills">
-                <h2>Core Competencies</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h4>AI Security & Governance</h4>
-                        <p>AI threat modelling (prompt injection, privacy inference, supply chain risks), LLM security architecture, AI-driven security automation, trustworthy AI frameworks, AI governance and risk management</p>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Security Architecture</h4>
-                        <p>Zero Trust Architecture, cloud security (AWS, Azure, GCP), API security, privacy-by-design, multi-tenant security, cryptographic controls, defence-in-depth</p>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Compliance & Governance</h4>
-                        <p>UK GDPR, Nigerian NDPR, Brazilian LGPD, ISO 27001, NIST frameworks, board-level security reporting, cross-border data governance</p>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Technical Skills</h4>
-                        <p>Microsoft Sentinel, Defender, Entra ID, Intune, SIEM, firewall administration (Fortinet, Palo Alto, Cisco), Python, PowerShell, Ansible, Terraform</p>
-                    </div>
-                </div>
-            </section>
-        </main>
+      <div class="talk-card">
+        <div class="talk-event">TVC News &middot; Nov 2025</div>
+        <div class="talk-title">Proposed Cybersecurity Legislation</div>
+        <p class="talk-detail">Expert commentary on This Morning programme covering cybersecurity regulatory developments. 100M+ potential viewer reach.</p>
+        <a class="talk-link" href="https://www.youtube.com/watch?v=VdVp8LyPXrQ" target="_blank">Watch Recording →</a>
+      </div>
+    </div>
+  </section>
 
- 
+  <!-- ── LEADERSHIP ── -->
+  <section class="section" id="leadership">
+    <div class="section-header">
+      <h2 class="section-title">Leadership & Community</h2>
+    </div>
+
+    <div class="leadership-grid">
+      <div class="leadership-card">
+        <div class="lc-org">ISACA Northern England Chapter</div>
+        <div class="lc-role">Board Member</div>
+        <p class="lc-desc">Contributes to governance and strategic direction for cybersecurity professionals across Yorkshire and Northeast England. Responsibilities span Digital Infrastructure Governance, Young Professionals Program, and Member Engagement. Endorsed by Chapter President Marianne Coop.</p>
+      </div>
+
+      <div class="leadership-card">
+        <div class="lc-org">STEM Learning — National STEM Learning Network</div>
+        <div class="lc-role">STEM Ambassador</div>
+        <p class="lc-desc">Industry mentor at Leeds University Business School and Leeds Trinity University. 60 hours dedicated, reaching 1,306 participants. Officially recognised for dedication to engaging groups from diverse backgrounds. Focus: cybersecurity career pathways.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SKILLS ── -->
+  <section class="section" id="skills">
+    <div class="section-header">
+      <h2 class="section-title">Core Competencies</h2>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-group-label">AI Security</div>
+        <ul>
+          <li>AI threat modelling</li>
+          <li>Prompt injection & privacy inference</li>
+          <li>LLM security architecture</li>
+          <li>Trustworthy AI frameworks</li>
+          <li>AI governance & risk management</li>
+          <li>AI-driven security automation</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-label">Security Architecture</div>
+        <ul>
+          <li>Zero Trust Architecture</li>
+          <li>Cloud security — AWS, Azure, GCP</li>
+          <li>API security & privacy-by-design</li>
+          <li>Cryptographic controls</li>
+          <li>Defence-in-depth</li>
+          <li>Multi-tenant security</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-label">Technical Stack</div>
+        <ul>
+          <li>Microsoft Sentinel, Defender, Entra ID</li>
+          <li>Palo Alto, Fortinet, Cisco FTD/FMC</li>
+          <li>FortiSIEM, Intune</li>
+          <li>Python, PowerShell, Ansible, Terraform</li>
+          <li>ISO 27001, NIST, GDPR compliance</li>
+          <li>Incident response & vulnerability mgmt</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EDUCATION ── -->
+  <section class="section" id="education">
+    <div class="section-header">
+      <h2 class="section-title">Education & Certifications</h2>
+    </div>
+
+    <div class="edu-certs">
+      <div>
+        <div class="edu-item">
+          <div class="edu-degree">MSc Cybersecurity <em style="font-weight:300; font-family: 'Cormorant Garamond', serif; font-style:italic; font-size:0.9rem;">(Distinction)</em></div>
+          <div class="edu-inst">University of Bradford, UK</div>
+          <div class="edu-year">2024</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">MSc Information Technology</div>
+          <div class="edu-inst">National Open University, Nigeria</div>
+          <div class="edu-year">2022</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">BSc Computer Science</div>
+          <div class="edu-inst">Lagos State University, Nigeria</div>
+          <div class="edu-year">2012</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="skill-group-label" style="margin-bottom: 0.9rem;">Certifications</div>
+        <div class="certs-list">
+          <span class="cert-badge">CISA</span>
+          <span class="cert-badge">ISO 27001 Lead Implementer</span>
+          <span class="cert-badge">Fortinet NSE 4</span>
+          <span class="cert-badge">Azure AZ-900</span>
+          <span class="cert-badge">AWS Cloud Practitioner</span>
+          <span class="cert-badge">Enterprise Security Risk Mgmt</span>
+          <span class="cert-badge">AI Security & Governance</span>
+          <span class="cert-badge">Incident Response</span>
+          <span class="cert-badge">PrivacyOps (GDPR)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <span class="footer-name">Kazeem Mutiu Adamson</span>
+    <span class="footer-location">United Kingdom &nbsp;·&nbsp; Available for Advisory & Speaking Engagements</span>
+  </footer>
+
+</div><!-- /page -->
+</body>
+</html>
